@@ -12,17 +12,17 @@
         <div class="form-input-string">
             <div class="form-input">
                 <div class="form-input__description">
-                    FIRST NAME <span style="color:#FF0000">*</span>
+                    FIRST NAME <span>*</span>
                 </div>
-                <input class="form-input__text"></input>
+                <input class="form-input__text form-input__text_size_basic"></input>
                 <div class="form-input__error">error msg text</div>
             </div>
 
             <div class="form-input">
                 <div class="form-input__description">
-                    LAST NAME <span style="color:#FF0000">*</span>
+                    LAST NAME <span>*</span>
                 </div>
-                <input class="form-input__text"></input>
+                <input class="form-input__text form-input__text_size_basic"></input>
                 <div class="form-input__error">error msg text</div>
             </div>
         </div>
@@ -30,17 +30,17 @@
         <div class="form-input-string">
             <div class="form-input">
                 <div class="form-input__description">
-                    COMPANY NAME <span style="color:#FF0000">*</span>
+                    COMPANY NAME <span>*</span>
                 </div>
-                <input class="form-input__text"></input>
+                <input class="form-input__text form-input__text_size_basic"></input>
                 <div class="form-input__error">error msg text</div>
             </div>
 
             <div class="form-input">
                 <div class="form-input__description">
-                    COMPANY INDUSTRY <span style="color:#FF0000">*</span>
+                    COMPANY INDUSTRY <span>*</span>
                 </div>
-                <input class="form-input__text"></input>
+                <input class="form-input__text form-input__text_size_basic"></input>
                 <div class="form-input__error">error msg text</div>
             </div>
         </div>
@@ -50,7 +50,7 @@
                 <div class="form-input__description">
                     COMPANY PHONE
                 </div>
-                <input class="form-input__text" placeholder="(000) 000-0000"></input>
+                <textarea class="form-input__text form-input__text_size_basic" placeholder="(000) 000-0000"></textarea>
                 <div class="form-input__error">error msg text</div>
             </div>
 
@@ -58,7 +58,7 @@
                 <div class="form-input__description">
                     COMPANY MAIL
                 </div>
-                <input class="form-input__text" placeholder="example@email.com"></input>
+                <textarea class="form-input__text form-input__text_size_basic" placeholder="example@email.com"></textarea>
                 <div class="form-input__error">error msg text</div>
             </div>
         </div>
@@ -66,29 +66,30 @@
         <div class="form-input-string">
             <div class="form-input">
                 <div class="form-input__description">
-                    COMPANY ADDRESS <span style="color:#FF0000">*</span>
+                    COMPANY ADDRESS <span>*</span>
                 </div>
-                <input class="form-input__text"></input>
+                <textarea class="form-input__text form-input__text_size_medium"
+                          placeholder="Country, City, Street, №"></textarea>
                 <div class="form-input__error">error msg text</div>
             </div>
         </div>
     </div>
 
-    <div class="event-info">
+    <div class="user-info">
         <div class="form-input-string">
             <div class="form-input">
                 <div class="form-input__description">
-                    EVENT DATE <span style="color:#FF0000">*</span>
+                    EVENT DATE <span>*</span>
                 </div>
-                <input class="form-input__text" placeholder="mm/dd/yyyy"></input>
+                <textarea class="form-input__text form-input__text_size_small" placeholder="mm/dd/yyyy"></textarea>
                 <div class="form-input__error">error msg text</div>
             </div>
 
-            <div class="form-input">
+            <div class="form-input form_input_double">
                 <div class="form-input__description">
                     # OF ATTENDEES (0 - no limit of participants)
                 </div>
-                <input class="form-input__text" value="0"></input>
+                <textarea class="form-input__text form-input__text_size_small" value="0"></textarea>
                 <div class="form-input__error">error msg text</div>
             </div>
         </div>
@@ -98,10 +99,20 @@
                 <div class="form-input__description">
                     EVENT INFO
                 </div>
-                <input class="form-input__text"
-                       placeholder="Here you can add more information about the upcoming event"></input>
+                <textarea class="form-input__text form-input__text_size_large"
+                       placeholder="Here you can add more information about the upcoming event"></textarea>
                 <div class="form-input__error">error msg text</div>
             </div>
+        </div>
+
+        <div class="form-input-string">
+            <div class="form-input-button form-input-button_double">
+                <button class="form-input-button__button form-input-button__button_color_795547">
+                    Reset
+                </button>
+                <button class="form-input-button__button form-input-button__button_color_673bb7">
+                    Send
+                </button>
         </div>
     </div>
 
