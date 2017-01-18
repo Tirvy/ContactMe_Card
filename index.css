@@ -56,6 +56,9 @@
 .form-input__text_size_large{
     height: 90px;
 }
+.form-input__text_border_red{
+    border-color: #FF0000;
+}
 .form-input-button{
     display: flex;
     flex-direction: row;
