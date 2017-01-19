@@ -86,7 +86,9 @@ function checkInputs() {
 
     if (erroredFields.length > 0){
         $( body ).scrollTop(erroredFields[0][0].offsetTop);
+        return false;
     }
+    return true;
 
     function checkError(elem) {
         if ((elem[0].value.length > 0)&&(!regExp.test(elem[0].value))){
