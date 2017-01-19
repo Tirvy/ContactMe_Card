@@ -1,6 +1,29 @@
 #body{
     margin:0;
 }
+.error-pointer{
+    display: none;
+}
+.error-pointer__arrow{
+    position: absolute;
+    background: #d50000;
+    border-radius: 3px;
+    padding: 2px;
+}
+.error-pointer__arrow:after {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(213, 0, 0, 0);
+    border-bottom-color: #d50000;
+    border-width: 10px;
+    margin-left: -10px;
+}
 .contactme-card{
     background: #424242;
     font-family: Arial;

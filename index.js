@@ -79,8 +79,9 @@ function checkInputs() {
     checkNumberList.forEach(checkError);
 
     checkNotEmptyList.forEach(function (elem) {
-        if (elem[0].value.length === 0){
+        if (elem.val().length === 0){
             addError(elem);
+            putError(elem, 'Must be filled');
         }
     });
 
@@ -93,9 +94,35 @@ function checkInputs() {
     function checkError(elem) {
         if ((elem[0].value.length > 0)&&(!regExp.test(elem[0].value))){
             addError(elem);
+            putError(elem, 'Wrong thing format');
         }else {
             elem.removeClass('form-input__text_border_red');
         }
+    }
+
+    function putError(elem, text1, text2) {
+        var errArrow = createErrorArrow(text1, text2);
+        elem.parent().append($(errArrow));
+        $(errArrow).offset({ top: (elem.height + 20), left : 20 });
+        $(errArrow).show();
+    }
+
+    function createErrorArrow(text1, text2){
+        var newElem = document.createElement('div');
+        newElem.className = 'error-pointer';
+
+        var arrElem = document.createElement('div');
+        arrElem.className = 'error-pointer__arrow';
+        arrElem.appendChild(document.createTextNode(text1));
+
+        var textElem = document.createElement('div');
+        textElem.className = 'error-pointer__text';
+        textElem.appendChild(document.createTextNode(text2));
+
+        newElem.appendChild(arrElem);
+        newElem.appendChild(textElem);
+
+        return newElem;
     }
 
     function addError(elem) {
