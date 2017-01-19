@@ -9,6 +9,7 @@ var checkAddressList = [];
 var checkDateList = [];
 var checkNumberList = [];
 var errorField;
+var arrowRemoveTimeout;
 
 $( document ).ready(function () {
     eAttendeesInput.defaultValue = '0';
@@ -59,6 +60,8 @@ $( document ).ready(function () {
 function checkInputs() {
     var erroredFields = [];
 
+    removeErrorArrows();
+
     checkNotEmptyList.forEach(function (elem) {
         elem.removeClass('form-input__text_border_red');
     });
@@ -81,12 +84,14 @@ function checkInputs() {
     checkNotEmptyList.forEach(function (elem) {
         if (elem.val().length === 0){
             addError(elem);
-            putError(elem, 'Must be filled');
+            putError(elem, 'Must be filled', '*');
         }
     });
 
     if (erroredFields.length > 0){
         $( body ).scrollTop(erroredFields[0][0].offsetTop);
+        clearTimeout(arrowRemoveTimeout);
+        arrowRemoveTimeout = setTimeout(removeErrorArrows, 5000);
         return false;
     }
     return true;
@@ -94,35 +99,30 @@ function checkInputs() {
     function checkError(elem) {
         if ((elem[0].value.length > 0)&&(!regExp.test(elem[0].value))){
             addError(elem);
-            putError(elem, 'Wrong thing format');
+            putError(elem, 'Wrong ' + elem.attr('validate') + ' format');
         }else {
             elem.removeClass('form-input__text_border_red');
         }
     }
 
     function putError(elem, text1, text2) {
-        var errArrow = createErrorArrow(text1, text2);
-        elem.parent().append($(errArrow));
-        $(errArrow).offset({ top: (elem.height + 20), left : 20 });
-        $(errArrow).show();
+        var $errArrow = createErrorArrow(text1, text2);
+        elem.parent().append($errArrow);
+        $errArrow.show();
+        $errArrow.attr('id', 'errArrow');
     }
 
     function createErrorArrow(text1, text2){
-        var newElem = document.createElement('div');
-        newElem.className = 'error-pointer';
+        var $new_elem = $('<div class="error-pointer"></div>');
+        var $arr_elem = $('<div class="error-pointer__arrow"></div>').text(text1);
+        $new_elem.append($arr_elem);
+        return $new_elem;
+    }
 
-        var arrElem = document.createElement('div');
-        arrElem.className = 'error-pointer__arrow';
-        arrElem.appendChild(document.createTextNode(text1));
-
-        var textElem = document.createElement('div');
-        textElem.className = 'error-pointer__text';
-        textElem.appendChild(document.createTextNode(text2));
-
-        newElem.appendChild(arrElem);
-        newElem.appendChild(textElem);
-
-        return newElem;
+    function removeErrorArrows() {
+        clearTimeout(arrowRemoveTimeout);
+        if (document.getElementById('errArrow'))
+            $(errArrow).remove();
     }
 
     function addError(elem) {

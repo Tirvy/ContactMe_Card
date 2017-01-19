@@ -8,10 +8,6 @@
     <title>ContactMe-Card</title>
 </head>
 <body id="body">
-    <div class="error-pointer" id="errorPointer">
-        <div class="error-pointer__arrow">one</div>
-        <div class="error-pointer__text">two</div>
-    </div>
     <div class="contactme-card">
         <div class="contactme-header">
             <div class="contactme-header__main">
@@ -29,14 +25,14 @@
                         <div class="form-input__description">
                             FIRST NAME <span>*</span>
                         </div>
-                        <input class="form-input__text form-input__text_size_basic" id="fNameInput"></input>
+                        <input class="form-input__text form-input__text_size_basic" id="fNameInput">
                     </div>
 
                     <div class="form-input">
                         <div class="form-input__description">
                             LAST NAME <span>*</span>
                         </div>
-                        <input class="form-input__text form-input__text_size_basic" id="lNameInput"></input>
+                        <input class="form-input__text form-input__text_size_basic" id="lNameInput">
                     </div>
                 </div>
 
@@ -45,14 +41,14 @@
                         <div class="form-input__description">
                             COMPANY NAME <span>*</span>
                         </div>
-                        <input class="form-input__text form-input__text_size_basic" id="cNameInput"></input>
+                        <input class="form-input__text form-input__text_size_basic" id="cNameInput">
                     </div>
 
                     <div class="form-input">
                         <div class="form-input__description">
                             COMPANY INDUSTRY <span>*</span>
                         </div>
-                        <input class="form-input__text form-input__text_size_basic" id="cIndustryInput"></input>
+                        <input class="form-input__text form-input__text_size_basic" id="cIndustryInput">
                     </div>
                 </div>
 
@@ -62,7 +58,8 @@
                             COMPANY PHONE
                         </div>
                         <input class="form-input__text form-input__text_size_basic"
-                                  placeholder="(000) 000-0000" id="cPhoneInput"></input>
+                                placeholder="(000) 000-0000" id="cPhoneInput"
+                                validate="phone">
                     </div>
 
                     <div class="form-input">
@@ -70,7 +67,8 @@
                             COMPANY MAIL
                         </div>
                         <input class="form-input__text form-input__text_size_basic"
-                                  placeholder="example@email.com" id="cMailInput"></input>
+                                placeholder="example@email.com" id="cMailInput"
+                                validate="email">
                     </div>
                 </div>
 
@@ -80,19 +78,21 @@
                             COMPANY ADDRESS <span>*</span>
                         </div>
                         <textarea class="form-input__text form-input__text_size_medium"
-                                  placeholder="Country, City, Street, №" id="cAddressInput"></textarea>
+                                placeholder="Country, City, Street, №" id="cAddressInput"
+                                validate="address"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="user-info">
-                <div class="form-input-string">
+                <div class="form-input-string form-input-string_nowrap">
                     <div class="form-input">
                         <div class="form-input__description">
                             EVENT DATE <span>*</span>
                         </div>
                         <input class="form-input__text form-input__text_size_small"
-                                  placeholder="mm/dd/yyyy" id="eDateInput"></input>
+                                placeholder="mm/dd/yyyy" id="eDateInput"
+                                validate="date">
                     </div>
 
                     <div class="form-input form_input_double">
@@ -100,7 +100,8 @@
                             # OF ATTENDEES (0 - no limit of participants)
                         </div>
                         <input class="form-input__text form-input__text_size_small"
-                                  defaultvalue="0" id="eAttendeesInput"></input>
+                                defaultvalue="0" id="eAttendeesInput"
+                                validate="number">
                     </div>
                 </div>
 
