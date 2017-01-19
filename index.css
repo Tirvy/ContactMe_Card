@@ -1,7 +1,29 @@
+#body{
+    margin:0;
+}
 .contactme-card{
     background: #424242;
     font-family: Arial;
     color: #cbcbcb;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.contactme-header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.contactme-header__main{
+    padding:10px;
+    font-size: 22px;
+}
+.contactme-header__additional{
+    padding:10px;
+    font-size: 16px;
+}
+.contactme-fields{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -25,19 +47,21 @@
     justify-content: flex-start;
 }
 .form-input{
-    padding: 5px;
+    padding: 10px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
-.form-input__description span{
+.contactme-card span{
     color: #FF0000;
 }
 
 .form-input__text{
+    border: 2px solid #f2f2f2;
     border-radius: 5px;
     font-size: 16px;
+    background-color: #fffde8;
 }
 .form-input__text_size_basic{
     height: 30px;
@@ -54,7 +78,8 @@
     height: 60px;
 }
 .form-input__text_size_large{
-    height: 90px;
+    flex-grow: 2;
+    height: 120px;
 }
 .form-input__text_border_red{
     border-color: #FF0000;
