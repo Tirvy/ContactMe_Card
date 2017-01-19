@@ -1,5 +1,6 @@
 #body{
     margin:0;
+    background: #424242;
 }
 .error-pointer{
     position: relative;
@@ -32,7 +33,6 @@
     margin-left: -10px;
 }
 .contactme-card{
-    background: #424242;
     font-family: Arial;
     color: #cbcbcb;
     padding: 20px;
